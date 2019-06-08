@@ -1,0 +1,2 @@
+module KezelesHelper
+end

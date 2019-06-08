@@ -1,0 +1,35 @@
+<div class="container">
+  <h1><%= t('treatments') %></h1>
+  <%= # if user is admin
+      link_to t('treatment.new'), new_kezele_path
+  %>
+  <br />
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Megnevezés</th>
+      <th>Időtartam</th>
+      <th>Ár</th>
+      <th>Részletek</th>
+      <% # if user is admin %>
+      <th>Módosítás</th>
+      <th>Törlés</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @kezeles.each do |kezele| %>
+      <tr>
+        <td><%= kezele.name %></td>
+        <td><%= kezele.minutes %></td>
+        <td><%= kezele.price %></td>
+        <td><%= link_to 'Show', kezele %></td>
+        <% #if user is admin %>
+        <!--<td><a href="edit_kezele_path(kezele)"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit.png"></a></td>-->
+        <td><%= link_to 'Edit', edit_kezele_path(kezele) %></td>
+        <td><%= link_to 'Destroy', kezele, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>

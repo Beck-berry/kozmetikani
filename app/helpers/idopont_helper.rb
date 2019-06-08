@@ -1,0 +1,2 @@
+module IdopontHelper
+end

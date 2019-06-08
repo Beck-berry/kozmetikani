@@ -1,0 +1,17 @@
+<%= form_for(kezele) do |f| %>
+  <% if kezele.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kezele.errors.count, "error") %> prohibited this kezele from being saved:</h2>
+
+      <ul>
+      <% kezele.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

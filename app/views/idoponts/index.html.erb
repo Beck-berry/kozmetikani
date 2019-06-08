@@ -1,0 +1,32 @@
+<h1><%= t('nav.appointments') %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @idoponts.each do |idopont| %>
+      <tr>
+        <td><%= link_to 'Show', idopont %></td>
+        <td><%= link_to 'Edit', edit_idopont_path(idopont) %></td>
+        <td><%= link_to 'Destroy', idopont, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<!-- https://github.com/excid3/simple_calendar -->
+
+<%= week_calendar events: @idoponts do |date, idoponts| %>
+  <%= date %>
+  <% idoponts.each do |i| %>
+    <div>
+      <%= i.todo %> - <%= i.clientsName %>
+    </div>
+  <% end %>
+<% end %>
+
+<%= link_to 'New Idopont', new_idopont_path %>
