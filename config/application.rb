@@ -16,4 +16,4 @@ end
 
 
 I18n.available_locales = [:en, :hu]
-I18n.default_locale = 'hu'
+I18n.default_locale = :hu

@@ -34,8 +34,12 @@
             <a class="nav-link" href="/<%= t('urls.log_in') %>"><%= t('authenticate.login') %></a>
         <% end %>
       </li>
-      <li class="nav-item nav-link" >
-        bla
+      <li class="nav-item nav-link" style="color: rgba(255, 255, 255, 0.5)!important; text-decoration: none;" >
+        <% if I18n.locale == :en %>
+          <%= link_to t('nav.lang'), locale: :hu %>
+        <% else %>
+          <%= link_to t('nav.lang'), locale: :en %>
+        <% end %>
       </li>
       <% if user_signed_in?  %>
         <li class="nav-item dropright">
