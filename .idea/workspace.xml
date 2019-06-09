@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b6dbb19-bf97-49a9-a211-426bdd50955e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/idopont.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/idopont.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/kezele.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/kezele.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/idoponts/_form.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/idoponts/_form.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/idoponts/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/idoponts/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/idoponts/new.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/idoponts/new.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/locales/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config/locales/en.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
-    </list>
+    <list default="true" id="4b6dbb19-bf97-49a9-a211-426bdd50955e" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/log/" />
@@ -369,12 +359,12 @@
       <option name="presentableId" value="Default" />
       <updated>1560014384948</updated>
       <workItem from="1560014386417" duration="12576000" />
-      <workItem from="1560067873060" duration="10553000" />
+      <workItem from="1560067873060" duration="10690000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23129000" />
+    <option name="totallyTimeSpent" value="23266000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-1" width="1920" height="1053" extended-state="6" />
