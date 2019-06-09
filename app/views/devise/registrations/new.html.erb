@@ -1,0 +1,43 @@
+<div class="container-fluid login">
+  <div class="d-flex justify-content-center h-100">
+    <div class="card">
+      <div class="card-header">
+        <h3><%= t('authenticate.register') %></h3>
+      </div>
+      <div class="card-body">
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <%= f.email_field :email, type: 'email', class: "form-control", placeholder: t('authenticate.email') %>
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <%= f.password_field :password, type: 'password', class: "form-control", placeholder: t('authenticate.password') %>
+          </div>
+          <div class="input-group form-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <%= f.password_field :password_confirmation, type: 'password', class: "form-control", placeholder: t('authenticate.password2') %>
+          </div>
+          <div class="row align-items-center checkBox">
+            <input type="checkbox" /><%= t('authenticate.policy') %>
+          </div>
+          <div class="form-group">
+            <%= f.submit t('authenticate.register'), class: "btn float-right login_btn" %>
+          </div>
+        </div>
+        <% end %>
+      <div class="card-footer">
+        <div class="d-flex justify-content-center links">
+          <%=t('authenticate.member')%> <a href="/<%=t('urls.log_in')%>"><%= t('authenticate.login') %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

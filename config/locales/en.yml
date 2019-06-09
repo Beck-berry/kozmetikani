@@ -1,0 +1,97 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  KA: "KozmetikAni"
+  authenticate:
+    register: "Register"
+    fullname: "Enter your full name"
+    email: "Enter your email address"
+    password: "Enter your password"
+    password2: "Enter your password again"
+    member: "Already a member?"
+    login: "Log in"
+    policy: "Agree to our policy & terms"
+    remember: "Remember me"
+    notmember: "Not a member?"
+    remindme: "Send me a reminder!"
+    forgotpassword: "Forgot your password?"
+  urls:
+    log_in: "users/sign_in"
+    sign_in: "users/sign_up"
+    treatments: "treatments"
+    appointments: "appointments"
+    users: "users"
+  nav:
+    treatments: "Treatments"
+    profil: "My profile"
+    lang: "Choose a language"
+    appointments: "Appointments"
+    logout: "Log out"
+  message:
+    user_created: "The registration was successful, user was added!"
+    user_updated: "The user was successfully updated."
+    user_destroyed: "The user was successfully destroyed."
+    appo_created: "The appointment was successfully created."
+    appo_updated: "The appointment was successfully updated."
+    appo_destroyed: "The appointment was successfully destroyed."
+    treat_created: 'The treatment was successfully created.'
+    treat_updated: 'The treatment was successfully updated.'
+    treat_destroyed: 'The treatment was successfully destroyed.'
+    must_login: "For further actions you must log in."
+    logedin: "Logged in as: "
+    confirm_delete: "Are you sure you want to destroy that?"
+  imprint: "Imprint"
+  users:
+    title: "Users list"
+    new: "Add new user"
+    email: "Email address"
+    show: "Profile"
+  appointment:
+    new: "Add new appointment"
+    comments: "If you have any further comments, tell me here:"
+    select_date: "Please select the appropriate date for you."
+    book: "Book this appointment."
+    cant_save: "occurred, the appointment can\'t be saved."
+    give_date: "Choose the date and the time that is suitable for you."
+    create: "Save this appointment."
+  treatment:
+    price: "Price in HUF"
+    mins: "Length in minutes"
+    desc: "Description"
+    new: "Add new treatment"
+    create: "Save this treatment"
+    edit: "Edit treatment"
+    details: "Details of treatment: "
+    cant_save: "occurred, the treatment can\'t be saved."
+    give_name: "Enter the treatment's name. Required."
+    give_minutes: "Enter the treatment's length in minutes. Required."
+    give_price: "Enter the price of the treatment."
+    give_desc: "What is this treatment about? For whom is it recommended?"
+    noprice: "This treatment doesn\'t have a specific price. You must talk with your beautician."
+    nodesc: "This treatment doesn\'t have any description. Want to add some?"
+  back: "Back"
+  error: "Error"
+  show: "Show"
+  edit: "Edit"
+  name: "Name"
+  destroy: "Destroy"
+  client: "Client"

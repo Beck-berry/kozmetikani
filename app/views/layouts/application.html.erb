@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= t('KA') %></title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="/"><%= t('KA') %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExample03">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/<%= t('urls.treatments') %>"><%= t('nav.treatments') %></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/<%= t('urls.appointments') %>"><%= t('nav.appointments') %></a>
+      </li>
+      <li class="nav-item">
+        <% if user_signed_in? %>
+          <a class="nav-link" href="/users/edit"><%= t('nav.profil') %></a>
+          </li>
+          <li>
+            <%= link_to t('nav.logout'), destroy_user_session_path, method: :delete, :class => 'nav-link'  %>
+        <% else %>
+          <a class="nav-link" href="/<%= t('urls.sign_in') %>"><%= t('authenticate.register') %></a>
+          </li>
+          <li>
+            <a class="nav-link" href="/<%= t('urls.log_in') %>"><%= t('authenticate.login') %></a>
+        <% end %>
+      </li>
+      <li class="nav-item" >
+        <%= t('nav.lang') %>
+      </li>
+      <% if user_signed_in?  %>
+        <li class="nav-item dropright">
+          <a href="#" class="nav-link dropdown-toggle" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin panel</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown03">
+           <a tabindex="-1" class="dropdown-item" href="/<%= t('urls.treatments') %>" >Új kezelés felvétele</a>
+           <a tabindex="-1" class="dropdown-item" href="/<%=t('urls.users') %>">Felhasználók listája</a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+    <div class="nav-item">
+      <% if user_signed_in? %>
+        <%= t('message.logedin') %><%= current_user.email %>
+      <% end %>
+    </div>
+  </div>
+</nav>
+
+<p class="notice"><%= notice %></p>
+
+<div class="container-fluid">
+  <div class="container">
+    <%= yield %>
+  </div>
+  <footer>
+    <%= t('imprint') %>
+    <a href="https://ilcsi.com">Ilcsi</a>
+    ¤
+    <a href="https://icons8.com/icon/71201/edit">Edit icon by Icons8</a>
+  </footer>
+</div>
+</body>
+</html>

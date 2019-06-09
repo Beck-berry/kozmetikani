@@ -1,0 +1,2 @@
+class IdopontController < ApplicationController
+end

@@ -1,0 +1,35 @@
+  <h1><%= t('nav.treatments') %></h1>
+  <%= if user_signed_in? && current_user.email == 'beki@beki.com'
+      link_to t('treatment.new'), new_kezele_path
+  end %>
+  <br />
+  <table class="table">
+    <thead>
+    <tr>
+      <th><%= t('name') %></th>
+      <th><%= t('treatment.mins') %></th>
+      <th><%= t('treatment.price') %></th>
+      <th><%= t('treatment.desc') %></th>
+      <% if user_signed_in? && current_user.email == 'beki@beki.com' %>
+      <th><%= t('edit') %></th>
+      <th><%= t('destroy') %></th>
+      <% end %>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @kezeles.each do |kezele| %>
+      <tr>
+        <td><%= kezele.name %></td>
+        <td><%= kezele.minutes %></td>
+        <td><%= kezele.price %></td>
+        <td><%= link_to t('show'), kezele %></td>
+        <% if user_signed_in? && current_user.email == 'beki@beki.com' %>
+        <!--<td><a href="edit_kezele_path(kezele)"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit.png"></a></td>-->
+        <td><%= link_to t('edit'), edit_kezele_path(kezele) %></td>
+        <td><%= link_to t('destroy'), kezele, method: :delete, data: { confirm: t('message.confirm_delete') } %></td>
+        <% end %>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>

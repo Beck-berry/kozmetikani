@@ -1,0 +1,2 @@
+class KezeleController < ApplicationController
+end
