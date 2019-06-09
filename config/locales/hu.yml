@@ -94,3 +94,15 @@ hu:
   name: "Név"
   destroy: "Törlés"
   client: "Vendég"
+  activerecord:
+    errors:
+      models:
+        idopont:
+          attributes:
+            toTime:
+              blank: "Az \'időpontig\' paraméter üres."
+            todo:
+              blank: "A \'kezelések\' paraméter üres."
+            user:
+              blank: "A \'vendég\' paraméter üres."
+              required: "A \'vendég\' paraméter megadása kötelező."

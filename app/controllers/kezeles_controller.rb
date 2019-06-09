@@ -4,6 +4,7 @@ class KezelesController < ApplicationController
 
   # GET /kezeles
   # GET /kezeles.json
+  public
   def index
     @kezeles = Kezele.all
   end

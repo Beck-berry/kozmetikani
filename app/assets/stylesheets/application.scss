@@ -34,93 +34,108 @@ $lobs:'Lobster';
 }
 
 .login {
-h3 {
-    font-family: $lobs;
-}
-.container {
-    height: 100%;
-    align-content: center;
+  h3 {
+      font-family: $lobs;
+  }
+  .container {
+      height: 100%;
+      align-content: center;
+  }
+
+  .card {
+      height: 400px;
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 400px;
+      background-color: rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .social_icon span {
+      font-size: 60px;
+      margin-left: 10px;
+      color: $primary-color;
+  }
+
+  .social_icon span:hover {
+      color: white;
+      cursor: pointer;
+  }
+
+  .card-header h3 {
+      color: white;
+  }
+
+  .social_icon {
+      position: absolute;
+      right: 20px;
+      top: -45px;
+  }
+
+  .input-group-prepend span {
+      width: 50px;
+      background-color: $primary-color;
+      color: black;
+      border: 0 !important;
+  }
+
+  input:focus {
+  //outline: 0 0 0 0 !important;
+      box-shadow: 0 0 0 0 !important;
+
+  }
+
+  .checkBox {
+      color: white;
+  }
+
+  .checkBox input {
+      width: 20px;
+      height: 20px;
+      margin-left: 15px;
+      margin-right: 5px;
+  }
+
+  .login_btn {
+      color: white;
+      background-color: $primary-color;
+      width: 100px;
+  }
+
+  .login_btn:hover {
+      color: black;
+      background-color: white;
+  }
+
+  .links {
+      color: white;
+  }
+
+  .links a {
+      margin-left: 4px;
+  }
 }
 
-.card {
-    height: 400px;
-    margin-top: auto;
-    margin-bottom: auto;
-    width: 400px;
-    background-color: rgba(0, 0, 0, 0.45) !important;
+.notice, .error {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
 }
 
-.social_icon span {
-    font-size: 60px;
-    margin-left: 10px;
-    color: $primary-color;
+.notice {
+  border: 1px solid darkgreen;
+  background-color: lightgreen;
 }
 
-.social_icon span:hover {
-    color: white;
-    cursor: pointer;
-}
-
-.card-header h3 {
-    color: white;
-}
-
-.social_icon {
-    position: absolute;
-    right: 20px;
-    top: -45px;
-}
-
-.input-group-prepend span {
-    width: 50px;
-    background-color: $primary-color;
-    color: black;
-    border: 0 !important;
-}
-
-input:focus {
-//outline: 0 0 0 0 !important;
-    box-shadow: 0 0 0 0 !important;
-
-}
-
-.checkBox {
-    color: white;
-}
-
-.checkBox input {
-    width: 20px;
-    height: 20px;
-    margin-left: 15px;
-    margin-right: 5px;
-}
-
-.login_btn {
-    color: white;
-    background-color: $primary-color;
-    width: 100px;
-}
-
-.login_btn:hover {
-    color: black;
-    background-color: white;
-}
-
-.links {
-    color: white;
-}
-
-.links a {
-    margin-left: 4px;
-}
+.error {
+  border: 1px solid darkred;
+  background-color: lightcoral;
 }
 
 footer {
     width: 90%;
-    position: absolute;
-    top: 95%;
     text-align: center;
     font-size: 0.8em;
     font-style: italic;
     margin-top: 30px;
+    margin-bottom: 10px;
 }
