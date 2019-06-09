@@ -43,7 +43,7 @@ en:
   nav:
     treatments: "Treatments"
     profil: "My profile"
-    lang: "Choose a language"
+    lang: "Váltás magyar nyelvre"
     appointments: "Appointments"
     logout: "Log out"
   message:
@@ -68,11 +68,10 @@ en:
   appointment:
     new: "Add new appointment"
     comments: "If you have any further comments, tell me here:"
-    select_date: "Please select the appropriate date for you."
     book: "Book this appointment."
     cant_save: "occurred, the appointment can\'t be saved."
     give_date: "Choose the date and the time that is suitable for you."
-    create: "Save this appointment."
+    edit: "Edit appointment"
   treatment:
     price: "Price in HUF"
     mins: "Length in minutes"

@@ -13,3 +13,7 @@ module Kozmetika
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+
+I18n.available_locales = [:en, :hu]
+I18n.default_locale = 'hu'

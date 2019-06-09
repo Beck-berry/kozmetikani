@@ -29,4 +29,6 @@
   </tbody>
 </table>
 
-<%= link_to t('appointment.new'), new_idopont_path %>
+<% if user_signed_in? %>
+  <%= link_to t('appointment.new'), new_idopont_path %>
+<% end %>
