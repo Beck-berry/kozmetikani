@@ -1,5 +1,3 @@
-<h1>New Kezele</h1>
-
-<%= render 'form', kezele: @kezele %>
-
-<%= link_to 'Back', kezeles_path %>
+  <h1><%=t('treatment.new') %></h1>
+  <%= render 'form', kezele: @kezele %>
+  <%= link_to t('back'), kezeles_path %>

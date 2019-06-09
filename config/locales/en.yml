@@ -53,15 +53,40 @@ en:
     appo_created: "The appointment was successfully created."
     appo_updated: "The appointment was successfully updated."
     appo_destroyed: "The appointment was successfully destroyed."
-    treat_created: 'Kezele was successfully created.'
-    treat_updated: 'Kezele was successfully updated.'
-    treat_destroyed: 'Kezele was successfully destroyed.'
+    treat_created: 'The treatment was successfully created.'
+    treat_updated: 'The treatment was successfully updated.'
+    treat_destroyed: 'The treatment was successfully destroyed.'
     must_login: "For further actions you must log in."
-    logedin: "Loged in as: "
+    logedin: "Logged in as: "
+    confirm_delete: "Are you sure you want to destroy that?"
   imprint: "Imprint"
-  comments: "If you have any further comments, tell me here:"
-  select_date: "Please select the appropriate date for you."
-  book: "Book this appointment."
+  users:
+    title: "Users list"
+    new: "Add new user"
+    email: "Email address"
+    show: "Profile"
+  appointment:
+    comments: "If you have any further comments, tell me here:"
+    select_date: "Please select the appropriate date for you."
+    book: "Book this appointment."
   treatment:
+    price: "Price in HUF"
+    mins: "Length in minutes"
+    desc: "Description"
     new: "Add new treatment"
-
+    create: "Save this treatment"
+    edit: "Edit treatment"
+    details: "Details of treatment: "
+    cant_save: "occurred, the treatment can\'t be saved."
+    give_name: "Enter the treatment's name. Required."
+    give_minutes: "Enter the treatment's length in minutes. Required."
+    give_price: "Enter the price of the treatment."
+    give_desc: "What is this treatment about? For whom is it recommended?"
+    noprice: "This treatment doesn\'t have a specific price. You must talk with your beautician."
+    nodesc: "This treatment doesn\'t have any description. Want to add some?"
+  back: "Back"
+  error: "Error"
+  show: "Show"
+  edit: "Edit"
+  name: "Name"
+  destroy: "Destroy"

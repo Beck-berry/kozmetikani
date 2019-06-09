@@ -1,5 +1,6 @@
 class KezelesController < ApplicationController
   before_action :set_kezele, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
 
   # GET /kezeles
   # GET /kezeles.json
@@ -28,7 +29,7 @@ class KezelesController < ApplicationController
 
     respond_to do |format|
       if @kezele.save
-        format.html { redirect_to @kezele, notice: 'Kezele was successfully created.' }
+        format.html { redirect_to @kezele, notice: t('message.treat_created') }
         format.json { render :show, status: :created, location: @kezele }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class KezelesController < ApplicationController
   def update
     respond_to do |format|
       if @kezele.update(kezele_params)
-        format.html { redirect_to @kezele, notice: 'Kezele was successfully updated.' }
+        format.html { redirect_to @kezele, notice: t('message.treat_updated') }
         format.json { render :show, status: :ok, location: @kezele }
       else
         format.html { render :edit }
@@ -56,19 +57,19 @@ class KezelesController < ApplicationController
   def destroy
     @kezele.destroy
     respond_to do |format|
-      format.html { redirect_to kezeles_url, notice: 'Kezele was successfully destroyed.' }
+      format.html { redirect_to kezeles_url, notice: t('message.treat_destroyed') }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_kezele
-      @kezele = Kezele.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_kezele
+    @kezele = Kezele.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def kezele_params
-      params.fetch(:kezele, {})
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def kezele_params
+    params.require(:kezele).permit(:name, :minutes, :price, :desc)
+  end
 end

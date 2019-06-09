@@ -1,6 +1,6 @@
-<h1>Editing Kezele</h1>
+<h1><%= t('treatment.edit') %></h1>
 
 <%= render 'form', kezele: @kezele %>
 
-<%= link_to 'Show', @kezele %> |
-<%= link_to 'Back', kezeles_path %>
+<%= link_to t('show'), @kezele %> |
+<%= link_to t('back'), kezeles_path %>

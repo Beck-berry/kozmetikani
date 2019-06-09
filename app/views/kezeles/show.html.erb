@@ -1,4 +1,25 @@
-<p id="notice"><%= notice %></p>
+<h1><%= t('treatment.details')%><em><%= @kezele.name %></em></h1>
 
-<%= link_to 'Edit', edit_kezele_path(@kezele) %> |
-<%= link_to 'Back', kezeles_path %>
+<div class="form-group">
+  <h4><%= t('treatment.mins') %></h4>
+  <div><%= @kezele.minutes %></div>
+</div>
+<div class="form-group">
+  <h4><%= t('treatment.price') %></h4>
+  <% if @kezele.price? %>
+    <div><%= @kezele.price %></div>
+  <% else %>
+    <div><%= t('treatment.noprice') %></div>
+  <% end %>
+</div>
+<div class="form-group">
+  <h4><%= t('treatment.desc') %></h4>
+  <% if @kezele.desc? %>
+    <div><%= @kezele.desc %></div>
+  <% else %>
+    <div><%= t('treatment.nodesc') %></div>
+  <% end %>
+</div>
+
+<%= link_to t('edit'), edit_kezele_path(@kezele) %> |
+<%= link_to t('back'), kezeles_path %>
