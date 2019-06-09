@@ -1,5 +1,5 @@
   <h1><%= t('users.title') %></h1>
-  <%= if current_user.email == 'beki@beki.com'
+  <%= if user_signed_in? && current_user.email == 'beki@beki.com'
         link_to t('users.new'), new_user_path
       end %>
   <br />
@@ -9,7 +9,7 @@
       <th><%= t('name') %></th>
       <th><%= t('users.email') %></th>
       <th><%= t('users.show') %></th>
-      <% if current_user.email == 'beki@beki.com' %>
+      <% if user_signed_in? && current_user.email == 'beki@beki.com' %>
         <th><%= t('edit') %></th>
         <th><%= t('destroy') %></th>
       <% end %>
@@ -22,7 +22,7 @@
         <td></td>
         <td><%= user.email %></td>
         <td><%= link_to t('show'), user %></td>
-        <% if current_user.email == 'beki@beki.com' %>
+        <% if user_signed_in? && current_user.email == 'beki@beki.com' %>
           <!--<td><a href="edit_kezele_path(kezele)"><img src="https://img.icons8.com/ios-glyphs/30/000000/edit.png"></a></td>-->
           <td><%= link_to t('edit'), edit_user_path(user) %></td>
           <td><%= link_to t('destroy'), user, method: :delete, data: { confirm: t('message.confirm_delete') } %></td>

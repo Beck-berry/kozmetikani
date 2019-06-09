@@ -1,7 +1,7 @@
 <%= form_for(idopont) do |f| %>
   <% if idopont.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(idopont.errors.count, "error") %> prohibited this idopont from being saved:</h2>
+      <h2><%= pluralize(idopont.errors.count, t('error')) %> <%=t('appointment.cant_save') %></h2>
 
       <ul>
       <% idopont.errors.full_messages.each do |message| %>
@@ -10,8 +10,27 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
+  <% if user_signed_in? %>
+  <div class="form-group">
+    <%=t('client')%>: <%= current_user.email %>
   </div>
+  <div class="form-group">
+    <%= f.text_field :fromTime, type: 'text', placeholder:t('appointment.give_date'), class:'form-control', required:'required' %>
+  </div>
+  <div class="form-group">
+    <!-- TODO -->
+    <label><%= t('nav.treatments') %></label>
+    <% @kezeles.each do |kezele| %>
+      <%= check_box("idopont", "todo", {:multiple => true}, kezele.name, nil) %>
+    <% end %>
+  </div>
+
+
+
+  <div class="form-group">
+    <%= f.submit t('appointment.create'), class: "btn float-right login_btn" %>
+  </div>
+  <% else %>
+    <div class="notice"><%= t('message.must_login') %></div>
+  <% end %>
 <% end %>
