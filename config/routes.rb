@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :kezeles
   resources :idoponts
 
+  match 'lang/:locale', to: 'index#change_locale', as: :change_locale, via: [:get]
+
 
   get '/', :to => redirect('/index.html')
   get '/idopontok', to: 'idoponts#index'

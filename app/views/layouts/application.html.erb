@@ -34,8 +34,12 @@
             <a class="nav-link" href="/<%= t('urls.log_in') %>"><%= t('authenticate.login') %></a>
         <% end %>
       </li>
-      <li class="nav-item" >
-        <%= t('nav.lang') %>
+      <li class="nav-item nav-link" >
+        <% if I18n.locale == 'hu' %>
+          <%= link_to t('nav.lang'), change_locale_path('en') %>
+        <% else %>
+          <%= link_to t('nav.lang'), change_locale_path('hu') %>
+        <% end %>
       </li>
       <% if user_signed_in?  %>
         <li class="nav-item dropright">

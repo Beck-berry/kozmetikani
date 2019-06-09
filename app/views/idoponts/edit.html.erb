@@ -1,6 +1,6 @@
-<h1>Editing Idopont</h1>
+<h1><%= t('appointment.edit') %></h1>
 
 <%= render 'form', idopont: @idopont %>
 
-<%= link_to 'Show', @idopont %> |
-<%= link_to 'Back', idoponts_path %>
+<%= link_to t('show'), @idopont %> |
+<%= link_to t('back'), idoponts_path %>
