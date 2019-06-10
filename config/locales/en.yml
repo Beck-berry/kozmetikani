@@ -59,6 +59,7 @@ en:
     must_login: "For further actions you must log in."
     logedin: "Logged in as: "
     confirm_delete: "Are you sure you want to destroy that?"
+    no_treatment: "Unfortunately there are no treatments you could choose from."
   imprint: "Imprint"
   users:
     title: "Users list"
@@ -72,6 +73,9 @@ en:
     cant_save: "occurred, the appointment can\'t be saved."
     give_date: "Choose the date and the time that is suitable for you."
     edit: "Edit appointment"
+    date: "Date"
+    from: "From"
+    to: "Until"
   treatment:
     price: "Price in HUF"
     mins: "Length in minutes"

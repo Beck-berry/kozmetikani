@@ -1,34 +1,69 @@
 <h1><%= t('nav.appointments') %></h1>
 
 <!-- https://github.com/excid3/simple_calendar -->
-
-<%= week_calendar events: @idoponts do |date, idoponts| %>
-  <%= date %>
-  <% idoponts.each do |i| %>
-    <div>
-      <%= i.todo %> - <%= i.user %>
-    </div>
+  <%= week_calendar events: @idoponts do |date, idoponts| %>
+    <%= date %>
+    <% idoponts.each do |i| %>
+      <div>
+        <%= i.fromTime.to_formatted_s(:time) %> - <%= i.toTime.to_formatted_s(:time) %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
 
-<table>
+<% if user_signed_in? %>
+<%= link_to t('appointment.new'), new_idopont_path %>
+
+<table class="table">
   <thead>
     <tr>
-      <th colspan="3"></th>
+      <th><%= t('client') %></th>
+      <th><%= t('appointment.date') %></th>
+      <th><%= t('appointment.from') %></th>
+      <th><%= t('appointment.to') %></th>
+      <th><%= t('nav.treatments') %></th>
+      <th><%= t('show') %></th>
+      <th><%= t('edit') %></th>
+      <th><%= t('destroy') %></th>
     </tr>
   </thead>
 
   <tbody>
     <% @idoponts.each do |idopont| %>
       <tr>
+        <td><%= idopont.user.email %></td>
+        <td><%= idopont.fromTime.to_date %></td>
+        <td><%= idopont.fromTime.to_formatted_s(:time) %></td>
+        <td><%= idopont.toTime.to_formatted_s(:time) %></td>
+        <% if current_user.email == 'beki@beki.com' || current_user.email == idopont.user.email %>
+        <td><%= idopont.todo %></td>
         <td><%= link_to t('show'), idopont %></td>
         <td><%= link_to t('edit'), edit_idopont_path(idopont) %></td>
         <td><%= link_to t('destroy'), idopont, method: :delete, data: { confirm: t('message.confirm_delete') } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<% if user_signed_in? %>
-  <%= link_to t('appointment.new'), new_idopont_path %>
+
+<% else %>
+  <table class="table">
+    <thead>
+    <tr>
+      <th><%= t('appointment.date') %></th>
+      <th><%= t('appointment.from') %></th>
+      <th><%= t('appointment.to') %></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <% @idoponts.each do |idopont| %>
+      <tr>
+        <td><%= idopont.fromTime.to_date %></td>
+        <td><%= idopont.fromTime.to_formatted_s(:time) %></td>
+        <td><%= idopont.toTime.to_formatted_s(:time) %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 <% end %>

@@ -19,13 +19,19 @@
   <div class="form-group">
     <h4><%= t('nav.treatments') %></h4>
     <div class="form-check">
-    <% @kezeles.each do |kezele| %>
-      <%= check_box(@idopont, :todo, {:multiple => true}, kezele.name, nil) %><span class="form-check-label" ><%= kezele.name %></span><br/>
+    <% if @kezeles.nil? %>
+      <%= t('message.no_treatment') %>
+    <% else %>
+      <% @kezeles.each do |kezele| %>
+        <%= check_box_tag "todos[]", kezele.id %><span class="form-check-label" ><%= kezele.name %></span><br/>
+      <% end %>
     <% end %>
     </div>
   </div>
   <div class="form-group">
+    <% if !@kezeles.nil? %>
     <%= f.submit t('appointment.book'), class: "btn float-right login_btn" %>
+    <% end %>
   </div>
   <% else %>
     <div class="notice"><%= t('message.must_login') %></div>

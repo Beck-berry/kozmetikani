@@ -59,6 +59,7 @@ hu:
     must_login: "A további műveletek eléréséhez bejelentkezés szükséges."
     logedin: "Belépve: "
     confirm_delete: "Biztosan törölni szeretnéd?"
+    no_treatment: "Egyelőre nincs kezelés, amik közül választani lehetne."
   imprint: "Impresszum"
   users:
     title: "Felhasználók listája"
@@ -72,6 +73,9 @@ hu:
     cant_save: "miatt az időpont nem foglalható le."
     give_date: "Válassza ki a megfelelő időpontot."
     edit: "Időpont szerkesztése"
+    date: "Dátum"
+    from: "Időponttól"
+    to: "Időpontig"
   treatment:
     price: "Ár (Ft)"
     mins: "Időtartam (perc)"

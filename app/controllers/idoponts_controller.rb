@@ -28,12 +28,16 @@ class IdopontsController < ApplicationController
     @idopont = Idopont.new(idopont_params)
     @kezeles = Kezele.all
 
+    @todos = Kezele.find(params[:todos])
     @needed_minutes = 0
-   # @idopont.to do.each do |k|
-   #   @needed_minutes += k.minutes
-   # end
+
+    @todos.each do |todo|
+      @idopont.todo.push(todo.name)
+      @needed_minutes += todo.minutes
+    end
+
     @idopont.user = current_user
-    @idopont.toTime = Time.at(@idopont.fromTime.to_i + @needed_minutes).to_datetime
+    @idopont.toTime = Time.at(@idopont.fromTime.to_i + @needed_minutes*60 ).to_datetime
 
     respond_to do |format|
       if @idopont.save
