@@ -110,3 +110,13 @@ hu:
             user:
               blank: "A \'vendég\' paraméter üres."
               required: "A \'vendég\' paraméter megadása kötelező."
+        user:
+          attributes:
+            password_confirmation:
+              confirmation: "A \'jelszó megerősítés\' mező kitöltése kötelező."
+            password:
+              blank: "Jelszó megadása kötelező!"
+              too_short: "A megadott jelszó túl rövid. Legalább 6 karakter hosszú szükséges."
+  errors:
+    messages:
+      not_saved: "%{count} hiba miatt a %{resource} mentése sikertelen."

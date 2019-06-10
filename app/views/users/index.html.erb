@@ -19,7 +19,7 @@
     <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td></td>
+        <td><%= user.name %></td>
         <td><%= user.email %></td>
         <td><%= link_to t('show'), user %></td>
         <% if user_signed_in? && current_user.email == 'beki@beki.com' %>

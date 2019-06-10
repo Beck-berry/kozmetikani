@@ -16,7 +16,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th><%= t('client') %></th>
+      <!--<th><%= t('client') %></th>-->
       <th><%= t('appointment.date') %></th>
       <th><%= t('appointment.from') %></th>
       <th><%= t('appointment.to') %></th>
@@ -30,16 +30,16 @@
   <tbody>
     <% @idoponts.each do |idopont| %>
       <tr>
-        <td><%= idopont.user.email %></td>
+        <!--<td> idopont.user.email </td> -->
         <td><%= idopont.fromTime.to_date %></td>
         <td><%= idopont.fromTime.to_formatted_s(:time) %></td>
         <td><%= idopont.toTime.to_formatted_s(:time) %></td>
-        <% if current_user.email == 'beki@beki.com' || current_user.email == idopont.user.email %>
+        <% # if current_user.email == 'beki@beki.com' || current_user.email == idopont.user.email %>
         <td><%= idopont.todo %></td>
         <td><%= link_to t('show'), idopont %></td>
         <td><%= link_to t('edit'), edit_idopont_path(idopont) %></td>
         <td><%= link_to t('destroy'), idopont, method: :delete, data: { confirm: t('message.confirm_delete') } %></td>
-        <% end %>
+        <% # end %>
       </tr>
     <% end %>
   </tbody>

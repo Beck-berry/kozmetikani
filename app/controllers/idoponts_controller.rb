@@ -5,6 +5,7 @@ class IdopontsController < ApplicationController
   # GET /idoponts.json
   def index
     @idoponts = Idopont.all
+    #:user.email = User.find(params[@idopont.user_id]).email
   end
 
   # GET /idoponts/1

@@ -35,7 +35,7 @@
           <%= t('authenticate.notmember') %> <a href="/<%= t('urls.sign_in') %>"><%= t('authenticate.register') %></a>
         </div>
         <div class="d-flex justify-content-center links">
-          <%= t('authenticate.forgotpassword') %> <a href="#"><%= t('authenticate.remindme') %></a>
+          <%= t('authenticate.forgotpassword') %> <%= link_to t('authenticate.remindme'), new_password_path(resource_name) %>
         </div>
       </div>
     </div>
