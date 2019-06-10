@@ -19,6 +19,14 @@
 $primary-color: #008080;
 $lobs:'Lobster';
 
+h1 {
+  font-family: $lobs;
+}
+
+p {
+  text-align: justify;
+}
+
 .navbar-brand {
     font-family: $lobs;
 }

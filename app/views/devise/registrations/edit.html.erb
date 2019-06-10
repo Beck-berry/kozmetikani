@@ -1,43 +1,47 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2><%= t('profil.edit') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div><%= t('message.wait_email_conf') %> <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+  <div class="form-group">
+    <%= f.label t('profil.psw') %> <span class="small"><%=t('profil.donot_change_psw') %></span><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+      <em><%= @minimum_password_length %> <%= t('profil.min_psw_length') %></em>
     <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
+  <div class="form-group">
+    <%= f.label t('profil.psw_confirmation') %> <span class="small"><%=t('profil.donot_change_psw') %></span><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+  <div class="form-group">
+    <%= f.label t('name') %> <span class="small"><%=t('profil.donot_change_psw') %></span><br />
+    <%= f.text_field :name, autocomplete: @user.name %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label t('profil.current_password') %> <span class="small"><%= t('profil.need_psw') %></span><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
+  <div class="actions form-group">
+    <%= f.submit t('profil.save') %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+<div>
+  <%= button_to t('profil.delete_acc'), registration_path(resource_name), data: { confirm: t('message.confirm_delete') }, method: :delete %>
+</div>
+<%= link_to t('back'), :back %>

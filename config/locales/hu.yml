@@ -60,6 +60,7 @@ hu:
     logedin: "Belépve: "
     confirm_delete: "Biztosan törölni szeretnéd?"
     no_treatment: "Egyelőre nincs kezelés, amik közül választani lehetne."
+    wait_email_conf: "Az alábbi email-cím megerősítésére várakozik:"
   imprint: "Impresszum"
   users:
     title: "Felhasználók listája"
@@ -91,6 +92,16 @@ hu:
     give_desc: "Egyéb információk."
     noprice: "A kezelésnek nincs előre meghatározott ára. A kozmetikussal egyeztessen."
     nodesc: "Még nem érkezett bővebb leírás a kezelésről."
+  profil:
+    psw: "Jelszó"
+    psw_confirmation: "Jelszó ismét"
+    current_password: "Aktuális jelszó"
+    need_psw: "A jelszó megadása a módosítások mentéséhez szükséges."
+    delete_acc: "Felhasználói profil törlése"
+    edit: "Felhasználói adatok szerkesztése"
+    donot_change_psw: "(hagyja üresen, ha nem akarja megváltoztatni)"
+    min_psw_length: "karakter legalább szükséges"
+    save: "Frissítések mentése"
   back: "Vissza"
   error: "Hiba"
   show: "Megnézem"
@@ -117,6 +128,8 @@ hu:
             password:
               blank: "Jelszó megadása kötelező!"
               too_short: "A megadott jelszó túl rövid. Legalább 6 karakter hosszú szükséges."
-  errors:
+
+            current_password:
+              blank: "A jelszó megadása kötelező."
     messages:
       not_saved: "%{count} hiba miatt a %{resource} mentése sikertelen."

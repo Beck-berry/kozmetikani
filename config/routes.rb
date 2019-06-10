@@ -6,9 +6,6 @@ Rails.application.routes.draw do
 
   get 'users/index'
 
-  resources :kezeles
-  resources :idoponts
-
   # match 'lang/:locale', to: 'index#change_locale', as: :change_locale, via: [:get]
   scope "(:locale)", :locale => /en|hu/ do
     get '/idopontok', to: 'idoponts#index'
@@ -16,6 +13,7 @@ Rails.application.routes.draw do
     get '/treatments', to: 'kezeles#index'
     get '/users', to: 'users#index'
     get '/felhasznalok', to: 'users#index'
+    get '/home', to: 'users#home'
   end
 
   get '/', :to => redirect('/index.html')
