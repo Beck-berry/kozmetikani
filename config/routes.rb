@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users
 
   get 'users/index'
+  get '/', :to => redirect('/index.html')
 
   # match 'lang/:locale', to: 'index#change_locale', as: :change_locale, via: [:get]
   scope "(:locale)", :locale => /en|hu/ do
@@ -15,8 +16,6 @@ Rails.application.routes.draw do
     get '/felhasznalok', to: 'users#index'
     get '/home', to: 'users#home'
   end
-
-  get '/', :to => redirect('/index.html')
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
